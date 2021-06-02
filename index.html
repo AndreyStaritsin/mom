@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preloader</title>
+  <link rel="stylesheet" href="preloader.css">
+
+
+</head>
+
+
+<div class="rotate-box">
+  <img src="pics/rotateSmall.png" alt="">
+</div>
+
+<div class="spiner">
+  <div class="lds-spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    document.querySelector(".rotate-box").style.visibility = "visible"
+    document.querySelector(".lds-spinner").style.display = "none";
+  }
+
+
+  function checkOrientation() {
+
+    let whatOrientation = screen.orientation.type
+    if (whatOrientation == "landscape-primary") {
+      document.querySelector(".rotate-box").style.display = "none"
+
+      document.querySelector(".lds-spinner").style.display = "inline-block";
+      location.replace('media.html')
+    }
+  }
+
+  checkOrientation()
+  window.addEventListener("orientationchange", checkOrientation)
+</script>
+
+</body>
+
+</html>
