@@ -6,19 +6,19 @@
 
 @font-face {
     font-family: "Coaster";
-    src: url("/fonts/mrCoasterG.otf");
+    src: url("/mom/fonts/mrCoasterG.otf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Nexa";
-    src: url("/fonts/Nexa.ttf");
+    src: url("/mom/fonts/Nexa.ttf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Ice";
-    src: url("/fonts/Ice.otf");
+    src: url("/mom/fonts/Ice.otf");
     font-weight: normal;
 }
 
