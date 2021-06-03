@@ -70,6 +70,7 @@ play.onclick = function () {//при клике на play
   play.style.display = "none"//выключаем его
   document.documentElement.requestFullscreen()//на весь экран
 audio.loop=true//зацикливаем музыку
+  audio.volume = 0.5;//громкость фона
   audio.play()//запускаем музыку
   area.style.opacity = "1"//показываем область
   
