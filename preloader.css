@@ -4,6 +4,23 @@ body {
   background-color: #212121;
 }
 
+@font-face {
+  font-family: "Coaster";
+  src: url("fonts/mrCoasterG.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: url("/mom/fonts/Nexa.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Ice";
+  src: url("/mom/fonts/Ice.otf");
+  font-weight: normal;
+}
 
 .rotate-box {
   width: 100vw;
@@ -81,7 +98,7 @@ z-index: 49;
   height: inherit;
   text-align: center;
   line-height: 2em;
-  font-family: sans-serif;
+  font-family: :"Coaster";
   animation: rotating 2s linear infinite;
   --direction: -1;
   display: flex;
