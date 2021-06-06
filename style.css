@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 @font-face {
@@ -75,7 +74,7 @@ body {
 
 .player::before,
 .player::after {
-    content: '';
+    content: "";
     position: absolute;
     width: inherit;
     height: inherit;
@@ -153,46 +152,47 @@ body {
     align-items: center;
     transition: 0.5s linear;
     z-index: 3;
+  
 }
 
 .card-1 {
-    transform: rotate(6deg);
+    transform: rotate3d(0.1,1,0,180deg);
 }
 
 .card-2 {
-    transform: rotate(-12deg);
+    transform: rotate3d(-0,1,0,180deg);
 }
 
 .card-3 {
-    transform: rotate(9deg);
+    transform: rotate3d(0.2,1,0,180deg);
 }
 
 .card-4 {
-    transform: rotate(-18deg);
+    transform:rotate3d(-0.3,1,0,180deg);
 }
 
 .card-5 {
-    transform: rotate(11deg);
+    transform:rotate3d(0.2,1,0,180deg) ;
 }
 
 .card-6 {
-    transform: rotate(17deg);
+    transform:rotate3d(0.1,1,0,180deg);
 }
 
 .card-7 {
-    transform: rotate(-19deg);
+    transform:rotate3d(-0.6,1,0,180deg);
 }
 
 .card-8 {
-    transform: rotate(4deg);
+    transform:rotate3d(0.4,1,0,180deg);
 }
 
 .card-9 {
-    transform: rotate(-8deg);
+    transform:rotate3d(-0.3,1,0,180deg) ;
 }
 
 .card-10 {
-    transform: rotate(-15deg);
+    transform:rotate3d(0.2,1,0,180deg);
 }
 
 .card-active {
@@ -202,7 +202,8 @@ body {
     top: 0;
     right: 0;
     transition: 0.5s linear;
-    transform: rotateX(360deg) rotateY(360deg);
+    transform: rotate3d(0,0,0,-0deg);
+  
 }
 
 .photo {
@@ -212,9 +213,12 @@ body {
     max-height: 100%;
     position: absolute;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.87);
-    background-color: ivory;
+    background-color: antiquewhite;
     padding: 3%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
+
 
 .photo-active {
     width: auto;
@@ -226,6 +230,7 @@ body {
     padding: 0.5%;
     transition: box-shadow 0.5s linear 0.3s;
 }
+
 
 /*-----------------------------ПИСЬМА-------------------------------------*/
 
@@ -247,40 +252,48 @@ body {
     left: -3.52%;
     top: -7.6%;
     z-index: 3;
-    transform: rotate(15deg);
+    transform: rotate3d(-0.1,1,0,180deg);
     background-image: url("pics/l7.jpg");
-
 }
 
 .pismo-2 {
     top: -8.2%;
     left: 7.8%;
     z-index: 3;
-    transform: rotate(-7deg);
+    transform: rotate3d(-0.15,1,0,180deg);
     background-image: url("pics/l7.jpg");
 }
 
 .pismo-3 {
-    top: -10.17%;
-    left: 15.27%;
+    top: 13.85%;
+    left: 8.25%;
     z-index: 2;
-    transform: rotate(40deg);
+    transform: rotate3d(0.1,1,0,180deg);
     background-image: url("pics/l7.jpg");
 }
 
 .pismo-4 {
-    top: 66%;
-    left: -2.9%;
+    top: 30%;
+    left: -3%;
     z-index: 4;
-    transform: rotate(-15deg);
+    transform: rotate3d(0.1,1,0,180deg);
     background-image: url("pics/l7.jpg");
 }
 
 .pismo-5 {
-    top: 66%;
-    left: 8%;
-    transform: rotate(9deg);
+    top: 63%;
+    left: -2%;
+    transform: rotate3d(-0.3,1,0,180deg);
     z-index: 4;
+    background-image: url("pics/l7.jpg");
+}
+
+
+.pismo-6 {
+    top: 45%;
+    left: 8%;
+    transform: rotate3d(-0.1,1,0,180deg);
+    z-index: 1;
     background-image: url("pics/l7.jpg");
 }
 
@@ -293,10 +306,9 @@ body {
     left: 50%;
     bottom: 0;
     z-index: 15;
-    transform: rotateX(360deg) rotateY(360deg) translateX(-50%);
+    transform: rotate3d(0,0,0,0deg) translateX(-50%);
     overflow-y: scroll;
     box-shadow: none;
-
 }
 
 .text {
@@ -307,22 +319,25 @@ body {
     display: block;
     z-index: 3;
     word-break: break-word;
-    font-size: 0.5em;
+    font-size: 1vw;
     transition: opacity 0.5s linear 0.5s;
     padding-bottom: 20px;
+    transform: rotateY(180deg);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .text-active {
     width: 80%;
     height: 80%;
     position: absolute;
-    font-size: 32px;
+    font-size: 3vw;
+    transform: rotateY(0deg);
 }
 
 /*----------------------------------КОНВЕРТЫ--------------------------------*/
 
 .convert {
-
     width: 18%;
     height: 27%;
     position: absolute;
@@ -331,6 +346,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 2;
+    cursor: pointer;
 }
 
 .convert-1 {
@@ -340,7 +356,6 @@ body {
 }
 
 .convert-2 {
-
     top: 50%;
     left: -1.75%;
     z-index: 3;
@@ -377,18 +392,17 @@ body {
     transform: rotateX(360deg) rotateY(360deg);
 }
 
-
 /*----------------------------АЛЬБОМ--------------------------------------*/
 
 .album-wrap {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 50%;
-    height: 65.25%;
+    width: 55%;
+    height: 70%;
     position: absolute;
     bottom: 17%;
-    left: 30%;
+    left: 26%;
     z-index: 1;
 }
 
@@ -613,6 +627,5 @@ body {
         box-shadow: 0px 0px 35px 0px indianred;
     }
 }
-
 
 /* created by Staritsin Andrey */
