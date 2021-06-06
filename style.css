@@ -152,47 +152,47 @@ body {
     align-items: center;
     transition: 0.5s linear;
     z-index: 3;
-  
+
 }
 
 .card-1 {
-    transform: rotate3d(0.1,1,0,180deg);
+    transform: rotate3d(0.1, 1, 0, 180deg);
 }
 
 .card-2 {
-    transform: rotate3d(-0,1,0,180deg);
+    transform: rotate3d(-0, 1, 0, 180deg);
 }
 
 .card-3 {
-    transform: rotate3d(0.2,1,0,180deg);
+    transform: rotate3d(0.2, 1, 0, 180deg);
 }
 
 .card-4 {
-    transform:rotate3d(-0.3,1,0,180deg);
+    transform: rotate3d(-0.3, 1, 0, 180deg);
 }
 
 .card-5 {
-    transform:rotate3d(0.2,1,0,180deg) ;
+    transform: rotate3d(0.2, 1, 0, 180deg);
 }
 
 .card-6 {
-    transform:rotate3d(0.1,1,0,180deg);
+    transform: rotate3d(0.1, 1, 0, 180deg);
 }
 
 .card-7 {
-    transform:rotate3d(-0.6,1,0,180deg);
+    transform: rotate3d(-0.6, 1, 0, 180deg);
 }
 
 .card-8 {
-    transform:rotate3d(0.4,1,0,180deg);
+    transform: rotate3d(0.4, 1, 0, 180deg);
 }
 
 .card-9 {
-    transform:rotate3d(-0.3,1,0,180deg) ;
+    transform: rotate3d(-0.3, 1, 0, 180deg);
 }
 
 .card-10 {
-    transform:rotate3d(0.2,1,0,180deg);
+    transform: rotate3d(0.2, 1, 0, 180deg);
 }
 
 .card-active {
@@ -202,8 +202,8 @@ body {
     top: 0;
     right: 0;
     transition: 0.5s linear;
-    transform: rotate3d(0,0,0,-0deg);
-  
+    transform: rotate3d(0, 0, 0, -0deg);
+
 }
 
 .photo {
@@ -252,7 +252,7 @@ body {
     left: -3.52%;
     top: -7.6%;
     z-index: 3;
-    transform: rotate3d(-0.1,1,0,180deg);
+    transform: rotate3d(-0.1, 1, 0, 180deg);
     background-image: url("pics/l7.jpg");
 }
 
@@ -260,7 +260,7 @@ body {
     top: -8.2%;
     left: 7.8%;
     z-index: 3;
-    transform: rotate3d(-0.15,1,0,180deg);
+    transform: rotate3d(-0.15, 1, 0, 180deg);
     background-image: url("pics/l7.jpg");
 }
 
@@ -268,7 +268,7 @@ body {
     top: 13.85%;
     left: 8.25%;
     z-index: 2;
-    transform: rotate3d(0.1,1,0,180deg);
+    transform: rotate3d(0.1, 1, 0, 180deg);
     background-image: url("pics/l7.jpg");
 }
 
@@ -276,14 +276,14 @@ body {
     top: 30%;
     left: -3%;
     z-index: 4;
-    transform: rotate3d(0.1,1,0,180deg);
+    transform: rotate3d(0.1, 1, 0, 180deg);
     background-image: url("pics/l7.jpg");
 }
 
 .pismo-5 {
     top: 63%;
     left: -2%;
-    transform: rotate3d(-0.3,1,0,180deg);
+    transform: rotate3d(-0.3, 1, 0, 180deg);
     z-index: 4;
     background-image: url("pics/l7.jpg");
 }
@@ -292,7 +292,15 @@ body {
 .pismo-6 {
     top: 45%;
     left: 8%;
-    transform: rotate3d(-0.1,1,0,180deg);
+    transform: rotate3d(-0.1, 1, 0, 180deg);
+    z-index: 1;
+    background-image: url("pics/l7.jpg");
+}
+
+.pismo-7 {
+    top: 75%;
+    left: 8%;
+    transform: rotate3d(-0.1, 1, 0, 180deg);
     z-index: 1;
     background-image: url("pics/l7.jpg");
 }
@@ -306,7 +314,7 @@ body {
     left: 50%;
     bottom: 0;
     z-index: 15;
-    transform: rotate3d(0,0,0,0deg) translateX(-50%);
+    transform: rotate3d(0, 0, 0, 0deg) translateX(-50%);
     overflow-y: scroll;
     box-shadow: none;
 }

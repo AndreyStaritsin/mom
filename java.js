@@ -56,6 +56,13 @@ window.addEventListener("orientationchange", checkOrientation);
 
 /*-----------------------------------------ПРЕЛОАДЕР ---------------------------------------*/
 var audio = new Audio("fon.mp3"); //создаеи объект фоновой музыки
+var pismo1voice = new Audio("pismo1.mp3")
+var pismo2voice = new Audio("pismo2.mp3")
+var pismo3voice = new Audio("pismo3.mp3")
+var pismo4voice = new Audio("pismo4.mp3")
+var pismo5voice = new Audio("pismo5.mp3")
+var pismo6voice = new Audio("pismo6.mp3")
+var pismo7voice = new Audio("pismo7.mp3")
 
 window.onload = function () {
   //как все загрузится
@@ -70,28 +77,72 @@ play.onclick = function () {
   play.style.display = "none"; //выключаем его
   document.documentElement.requestFullscreen(); //на весь экран
   audio.loop = true; //зацикливаем музыку
-  audio.volume = 0.7; //громкость фона
+  audio.volume = 0.5; //громкость фона
   audio.play(); //запускаем музыку
   area.style.opacity = "1"; //показываем область
 };
 
 /*-----------------------------------------Письма и конверты ---------------------------------------*/
 
-for (let pismo = 0; pismo < pisma.length; pismo++) {
+for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушателя клик циклом на письма
+  function startVoice(voice) {
+    if (pisma[pismo].classList.contains("pismo-active")) {
+      voice.pause()
+      voice.currentTime = 0
+    } else {
+      setTimeout(function () {
+        voice.play()
+      }, 500)
+    }
+    if (audio.volume == 0.5) {
+      audio.volume = 0.05;
+    } else if (audio.volume == 0.05) {
+      setTimeout(function () {
+        audio.volume = 0.5
+      }, 500)
+      audio.volume = 0.35
+    }
+  };
+
   pisma[pismo].addEventListener("click", function () {
-    //вешаем слушателя клик циклом на письма
+    switch (true) {
+      case pisma[pismo].classList.contains("pismo-1"):
+        startVoice(pismo1voice)
+        break;
+      case pisma[pismo].classList.contains("pismo-2"):
+        startVoice(pismo2voice)
+        break;
+      case pisma[pismo].classList.contains("pismo-3"):
+        startVoice(pismo3voice)
+        break;
+      case pisma[pismo].classList.contains("pismo-4"):
+        startVoice(pismo4voice)
+        break;
+      case pisma[pismo].classList.contains("pismo-5"):
+        startVoice(pismo5voice)
+        break;
+      case pisma[pismo].classList.contains("pismo-6"):
+        startVoice(pismo6voice)
+        break;
+      case pisma[pismo].classList.contains("pismo-7"):
+        startVoice(pismo7voice)
+        break;
+    }
+
+
+
+
+
+
+
+
     pisma[pismo].classList.toggle("pismo-active"); //добавление/выключение класса актив (включено)
     pisma[pismo].children[0].classList.toggle("text-active"); //включаем текст
     pisma[pismo].children[0].style.opacity = "1"; //делаем его видимым
     screenShadow.classList.toggle("screen-shadow-active"); //показываем затемнение
-   if(audio.volume== 0.7){
-    audio.volume=0.3;
-   }else if(audio.volume==0.3){
-     audio.volume=0.7
-   }
-  });
-}
 
+  })
+}
 
 for (let convert = 0; convert < converts.length; convert++) {
   converts[convert].children[0].addEventListener("click", function () {
