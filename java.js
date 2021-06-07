@@ -81,7 +81,7 @@ play.onclick = function () {
   setTimeout(function(){
    audio.play(); //запускаем музыку
    area.style.opacity = "1"; //показываем область
-  },1000)
+  },750)
  
 };
 
