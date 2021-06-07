@@ -30,10 +30,10 @@ function showAlert(text) {
   }, 100);
   setTimeout(function () {
     alert.style.opacity = "0";
-  }, 3000);
+  }, 2500);
   setTimeout(function () {
     alert.style.display = "none";
-  }, 3500);
+  }, 2750);
 }
 
 /*----------------------------------------- ПРОВЕРКА ОРИЕНТАЦИИ---------------------------------------*/
@@ -78,8 +78,11 @@ play.onclick = function () {
   document.documentElement.requestFullscreen(); //на весь экран
   audio.loop = true; //зацикливаем музыку
   audio.volume = 0.5; //громкость фона
-  audio.play(); //запускаем музыку
-  area.style.opacity = "1"; //показываем область
+  setTimeout(function(){
+   audio.play(); //запускаем музыку
+   area.style.opacity = "1"; //показываем область
+  },1000)
+ 
 };
 
 /*-----------------------------------------Письма и конверты ---------------------------------------*/
