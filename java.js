@@ -154,8 +154,12 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
   {
 
       for (let i = 0; i < cards.length; i++) {
+        setTimeout(function(){
+          photoWrap.style.opacity="1"
 
-cards[i].children[0].classList.add("waitCard")
+          cards[i].children[0].classList.add("waitCard")
+        },500)
+      
 
       }
     }
