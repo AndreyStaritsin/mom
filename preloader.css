@@ -16,12 +16,6 @@ body {
   font-weight: normal;
 }
 
-@font-face {
-  font-family: "Ice";
-  src: url("/mom/fonts/Ice.otf");
-  font-weight: normal;
-}
-
 .rotate-box {
   width: 100vw;
   height: 100vh;
