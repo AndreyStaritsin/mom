@@ -314,6 +314,34 @@ body {
     box-shadow: none;
 }
 
+.waitCard{
+    animation:waitCard 3s linear infinite ;
+    box-shadow: 0px 0px 20px 0px rgba(230, 133, 154, 0.616);
+}
+
+@keyframes waitCard {
+    20%, 100% {
+      
+        box-shadow: 0px 0px 0px 0px rgba(230, 133, 154, 0.616);
+    }
+  }
+
+
+  
+.waitPismo{
+    animation:waitPismo 3s linear infinite ;
+    box-shadow: 0px 0px 20px 0px rgba(230, 133, 154, 0.616);
+}
+
+@keyframes waitPismo {
+    20%, 100% {
+        box-shadow: 0px 0px 15px 0px black;
+      
+       
+    }
+  }
+
+
 .text {
     font-family: "Nexa";
     opacity: 0;

@@ -19,6 +19,7 @@ let src = ""; //путь фото
 let cardAlbum = 0; //счетчик ячеек (общее) альбома
 let cadr = 0; //счетчик заполненых ячеек листа альбома
 let numAddPhoto = "11"; // номер фото для дозагрузки после начальных 10
+let numPismo=0
 
 /*-----------------------------------ПРЕДУПРЕЖДЕНИЕ ----------------------------------*/
 
@@ -82,12 +83,12 @@ play.onclick = function () {
    audio.play(); //запускаем музыку
    area.style.opacity = "1"; //показываем область
   },750)
- 
 };
 
 /*-----------------------------------------Письма и конверты ---------------------------------------*/
 
 for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушателя клик циклом на письма
+   
   function startVoice(voice) {
     if (pisma[pismo].classList.contains("pismo-active")) {
       voice.pause()
@@ -111,28 +112,52 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
   };
 
   pisma[pismo].addEventListener("click", function () {
+ 
     switch (true) {
       case pisma[pismo].classList.contains("pismo-1"):
         startVoice(pismo1voice)
+        pisma[pismo].classList.add("read")
         break;
       case pisma[pismo].classList.contains("pismo-2"):
         startVoice(pismo2voice)
+        pisma[pismo].classList.add("read")
         break;
       case pisma[pismo].classList.contains("pismo-3"):
         startVoice(pismo3voice)
+        pisma[pismo].classList.add("read")
         break;
       case pisma[pismo].classList.contains("pismo-4"):
         startVoice(pismo4voice)
+        pisma[pismo].classList.add("read")
         break;
       case pisma[pismo].classList.contains("pismo-5"):
         startVoice(pismo5voice)
+        pisma[pismo].classList.add("read")
         break;
       case pisma[pismo].classList.contains("pismo-6"):
         startVoice(pismo6voice)
+        pisma[pismo].classList.add("read")
         break;
       case pisma[pismo].classList.contains("pismo-7"):
         startVoice(pismo7voice)
+        pisma[pismo].classList.add("read")
         break;
+    }
+
+    if(pisma[0].classList.contains("read")&&
+    pisma[1].classList.contains("read")&&
+    pisma[2].classList.contains("read")&&
+    pisma[3].classList.contains("read")&&
+    pisma[4].classList.contains("read")&&
+    pisma[5].classList.contains("read")&&
+    pisma[6].classList.contains("read"))
+  {
+
+      for (let i = 0; i < cards.length; i++) {
+
+cards[i].children[0].classList.add("waitCard")
+
+      }
     }
 
 
@@ -142,25 +167,28 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
 
 
 
+
+
+
+    pisma[pismo].classList.remove("waitPismo")
     pisma[pismo].classList.toggle("pismo-active"); //добавление/выключение класса актив (включено)
     pisma[pismo].children[0].classList.toggle("text-active"); //включаем текст
     pisma[pismo].children[0].style.opacity = "1"; //делаем его видимым
     screenShadow.classList.toggle("screen-shadow-active"); //показываем затемнение
-
+  
+    
   })
-}
-
-for (let convert = 0; convert < converts.length; convert++) {
-  converts[convert].children[0].addEventListener("click", function () {
-    converts[convert].classList.toggle("convert-active");
-    screenShadow.classList.toggle("screen-shadow-active");
-  });
 }
 
 /*----------------------------------------- ФОТО НА ВЕСЬ  ---------------------------------------*/
 
 for (let i = 0; i < cards.length; i++) {
+
+
+
+ 
   cards[i].children[0].addEventListener("click", function (e) {
+    cards[i].children[0].classList.remove("waitCard")
     let photoAlbum = document.querySelectorAll(`.photo-album`); //получаем все фото(ячейки)альбома. При клике он перезаписывается
 
     let sheetRight = document.querySelector(`.sheet-${sheet}`).children[1]; // получаем правую страницу Текущего листа.
