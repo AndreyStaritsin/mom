@@ -63,7 +63,7 @@ body {
 .player {
     width: 10em;
     height: 10em;
-    font-size: 30px;
+    font-size: 25px;
     box-sizing: border-box;
     border-top: 0.3em solid hotpink;
     border-radius: 50%;
