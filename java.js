@@ -99,10 +99,10 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
     } else if (audio.volume == 0.08) {
       setTimeout(function () {
         audio.volume = 0.25
-      }, 500)
+      }, 250)
        setTimeout(function () {
         audio.volume = 0.5
-      }, 1000)
+      }, 500)
       audio.volume = 0.15
     }
   };
