@@ -92,7 +92,7 @@ z-index: 49;
   height: inherit;
   text-align: center;
   line-height: 2em;
-  font-family: :"Coaster";
+  font-family:"Coaster";
   animation: rotating 2s linear infinite;
   --direction: -1;
   display: flex;
