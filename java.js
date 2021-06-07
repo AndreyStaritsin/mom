@@ -95,8 +95,8 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
       }, 1000)
     }
     if (audio.volume == 0.5) {
-      audio.volume = 0.05;
-    } else if (audio.volume == 0.05) {
+      audio.volume = 0.15;
+    } else if (audio.volume == 0.15) {
       setTimeout(function () {
         audio.volume = 0.5
       }, 500)
@@ -287,7 +287,7 @@ area.addEventListener("pointerup", function (event) {
       y: event.y,
     };
   way = end.x - start.x; //путь пройденый от начала до конца свайпа
-  if (0 < way && way > window.innerWidth / 3) {
+  if (0 < way && way > window.innerWidth / 4) {
     //ЛИСТАНИЕ НАЗАД
 
     if (sheetForSwipe > 1) {
@@ -327,7 +327,7 @@ area.addEventListener("pointerup", function (event) {
     }
   }
 
-  if (way < (window.innerWidth / 3) * -1 && way < 0) {
+  if (way < (window.innerWidth / 4) * -1 && way < 0) {
     //ЛИСТАНИЕ ВПЕРЕД
     if (sheetForSwipe < sheet) {
       //если кол-во листов в счетчике для свайпа < кол-ва листов общего
