@@ -92,15 +92,18 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
     } else {
       setTimeout(function () {
         voice.play()
-      }, 1000)
+      }, 650)
     }
     if (audio.volume == 0.5) {
-      audio.volume = 0.15;
-    } else if (audio.volume == 0.15) {
+      audio.volume = 0.08;
+    } else if (audio.volume == 0.08) {
       setTimeout(function () {
-        audio.volume = 0.5
+        audio.volume = 0.25
       }, 500)
-      audio.volume = 0.35
+       setTimeout(function () {
+        audio.volume = 0.5
+      }, 1000)
+      audio.volume = 0.15
     }
   };
 
