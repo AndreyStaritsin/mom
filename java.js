@@ -99,8 +99,8 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
       }, 650)
     }
     if (audio.volume == 0.6) {
-      audio.volume = 0.15;
-    } else if (audio.volume == 0.15) {
+      audio.volume = 0.1;
+    } else if (audio.volume == 0.1) {
     
         audio.volume = 0.6
     
