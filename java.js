@@ -7,6 +7,7 @@ let cards = document.querySelectorAll(".card");
 let blur = document.querySelector(".blur");
 let screenShadow = document.querySelector(".screen-shadow");
 let screenShadowTap = document.querySelector(".screen-shadow-card");
+let screenShadowPismo = document.querySelector(".screen-shadow-pismo");
 let pisma = document.querySelectorAll(".pismo");
 let converts = document.querySelectorAll(".convert");
 let albumWrap = document.querySelector(".album-wrap");
