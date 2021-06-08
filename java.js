@@ -6,12 +6,15 @@ let photoWrap = document.querySelector(".photo-wrap");
 let cards = document.querySelectorAll(".card");
 let blur = document.querySelector(".blur");
 let screenShadow = document.querySelector(".screen-shadow");
+let screenShadowTap = document.querySelector(".screen-shadow-tap");
 let pisma = document.querySelectorAll(".pismo");
 let converts = document.querySelectorAll(".convert");
 let albumWrap = document.querySelector(".album-wrap");
 let photoAlbumBox = document.querySelectorAll(".photo-box");
 let photoFullBox = document.querySelector(".photo-full-box");
 let alert = document.querySelector(".alert-box");
+let tap = document.querySelector(".tap")
+let tapCard = document.querySelector(".tap-card")
 
 let sheet = 1; //счетчик листов альбома
 let sheetForSwipe = 1; //счетчик листов альбома при листании
@@ -19,7 +22,7 @@ let src = ""; //путь фото
 let cardAlbum = 0; //счетчик ячеек (общее) альбома
 let cadr = 0; //счетчик заполненых ячеек листа альбома
 let numAddPhoto = "11"; // номер фото для дозагрузки после начальных 10
-let numPismo=0
+let stagePismo = 0
 
 /*-----------------------------------ПРЕДУПРЕЖДЕНИЕ ----------------------------------*/
 
@@ -79,16 +82,29 @@ play.onclick = function () {
   document.documentElement.requestFullscreen(); //на весь экран
   audio.loop = true; //зацикливаем музыку
   audio.volume = 0.6; //громкость фона
-  setTimeout(function(){
-   audio.play(); //запускаем музыку
-   area.style.opacity = "1"; //показываем область
-  },750)
+  setTimeout(function () {
+    audio.play(); //запускаем музыку
+    area.style.opacity = "1"; //показываем область
+    tap.style.display = "flex"
+  }, 750)
+  setTimeout(function () {
+    screenShadow.classList.add("screen-shadow-active")
+    tap.style.opacity = "1"
+  }, 2500)
 };
+tap.onclick = function () {
+  tap.style.opacity = "0"
+  setTimeout(function () {
+    screenShadow.classList.remove("screen-shadow-active")
+    tap.style.display = "none"
+  }, 500)
+}
+
 
 /*-----------------------------------------Письма и конверты ---------------------------------------*/
 
 for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушателя клик циклом на письма
-   
+
   function startVoice(voice) {
     if (pisma[pismo].classList.contains("pismo-active")) {
       voice.pause()
@@ -101,14 +117,12 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
     if (audio.volume == 0.6) {
       audio.volume = 0.1;
     } else if (audio.volume == 0.1) {
-    
-        audio.volume = 0.6
-    
- }
+      audio.volume = 0.6
+    }
   };
 
   pisma[pismo].addEventListener("click", function () {
- 
+    stagePismo = stagePismo
     switch (true) {
       case pisma[pismo].classList.contains("pismo-1"):
         startVoice(pismo1voice)
@@ -140,57 +154,45 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
         break;
     }
 
-    if(pisma[0].classList.contains("read")&&
-    pisma[1].classList.contains("read")&&
-    pisma[2].classList.contains("read")&&
-    pisma[3].classList.contains("read")&&
-    pisma[4].classList.contains("read")&&
-    pisma[5].classList.contains("read")&&
-    pisma[6].classList.contains("read"))
-  {
+    if (pisma[0].classList.contains("read") &&
+      pisma[1].classList.contains("read") &&
+      pisma[2].classList.contains("read") &&
+      pisma[3].classList.contains("read") &&
+      pisma[4].classList.contains("read") &&
+      pisma[5].classList.contains("read") &&
+      pisma[6].classList.contains("read") && stagePismo === 0) {
 
-      for (let i = 0; i < cards.length; i++) {
-        setTimeout(function(){
-          photoWrap.style.opacity="1"
+      stagePismo = 1
+      photoWrap.style.opacity = "1"
+      setTimeout(function () {
+        tapCard.style.display = "flex"
+      }, 500)
+      setTimeout(function () {
+        screenShadowTap.classList.add("screen-shadow-tap-active")
+        tapCard.style.opacity = "1"
+      }, 1000)
+    };
 
-          cards[i].children[0].classList.add("waitCard")
-        },500)
-      
+    tapCard.onclick = function () {
+      tapCard.style.opacity = "0"
+      setTimeout(function () {
+        screenShadowTap.classList.remove("screen-shadow-tap-active")
+        tapCard.style.display = "none"
+      }, 500)
 
-      }
     }
-
-
-
-
-
-
-
-
-
-
-
-    pisma[pismo].classList.remove("waitPismo")
     pisma[pismo].classList.toggle("pismo-active"); //добавление/выключение класса актив (включено)
     pisma[pismo].children[0].classList.toggle("text-active"); //включаем текст
     pisma[pismo].children[0].style.opacity = "1"; //делаем его видимым
     screenShadow.classList.toggle("screen-shadow-active"); //показываем затемнение
-  
-    
   })
 }
 
 /*----------------------------------------- ФОТО НА ВЕСЬ  ---------------------------------------*/
 
 for (let i = 0; i < cards.length; i++) {
-
-
-
- 
   cards[i].children[0].addEventListener("click", function (e) {
-    cards[i].children[0].classList.remove("waitCard")
     let photoAlbum = document.querySelectorAll(`.photo-album`); //получаем все фото(ячейки)альбома. При клике он перезаписывается
-
     let sheetRight = document.querySelector(`.sheet-${sheet}`).children[1]; // получаем правую страницу Текущего листа.
     if (e.target.localName == "img") {
       //если кликаем по фото
