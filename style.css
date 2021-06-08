@@ -564,6 +564,21 @@ body {
     transform: scaleZ(0);
 }
 
+
+.screen-shadow-card {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s linear;
+    background-color: #212121e3;
+    z-index: 10;
+    transform: scaleZ(0);
+}
+
 .screen-shadow-active {
     opacity: 1;
     transform: scaleZ(1);
