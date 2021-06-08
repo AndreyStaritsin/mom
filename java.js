@@ -78,7 +78,7 @@ play.onclick = function () {
   play.style.display = "none"; //выключаем его
   document.documentElement.requestFullscreen(); //на весь экран
   audio.loop = true; //зацикливаем музыку
-  audio.volume = 0.5; //громкость фона
+  audio.volume = 0.6; //громкость фона
   setTimeout(function(){
    audio.play(); //запускаем музыку
    area.style.opacity = "1"; //показываем область
@@ -98,17 +98,17 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
         voice.play()
       }, 650)
     }
-    if (audio.volume == 0.5) {
+    if (audio.volume == 0.6) {
       audio.volume = 0.08;
     } else if (audio.volume == 0.08) {
-      setTimeout(function () {
-        audio.volume = 0.25
-      }, 150)
-       setTimeout(function () {
-        audio.volume = 0.5
-      }, 250)
-      audio.volume = 0.15
-    }
+     // setTimeout(function () {
+    //    audio.volume = 0.25
+    //  }, 150)
+    //   setTimeout(function () {
+        audio.volume = 0.6
+    //}, 250)
+   // audio.volume = 0.15
+//  }
   };
 
   pisma[pismo].addEventListener("click", function () {
