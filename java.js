@@ -16,6 +16,8 @@ let alert = document.querySelector(".alert-box");
 let tap = document.querySelector(".tap")
 let tapCard = document.querySelector(".tap-card")
 let tapAlbum = document.querySelector(".tap-album")
+let intro = document.querySelector(".intro")
+let introText = document.querySelectorAll(".intro-text p")
 
 let sheet = 1; //счетчик листов альбома
 let sheetForSwipe = 1; //счетчик листов альбома при листании
@@ -24,7 +26,7 @@ let cardAlbum = 0; //счетчик ячеек (общее) альбома
 let cadr = 0; //счетчик заполненых ячеек листа альбома
 let numAddPhoto = "11"; // номер фото для дозагрузки после начальных 10
 let stagePismo = 0
-let cardNum=0
+let cardNum = 0
 
 
 /*-----------------------------------ПРЕДУПРЕЖДЕНИЕ ----------------------------------*/
@@ -85,6 +87,20 @@ play.onclick = function () {
   document.documentElement.requestFullscreen(); //на весь экран
   audio.loop = true; //зацикливаем музыку
   audio.volume = 0.6; //громкость фона
+
+  for (let i = 0, t = 1000, d = 1000; i < introText.length; i++, t = t + 1300 + d) {
+    setTimeout(function () {
+      introText[i].style.animationPlayState = "running"
+    }, t)
+  }
+  setTimeout(function () {
+    intro.style.opacity = "0"
+  }, 21000)
+  setTimeout(function () {
+    intro.style.display = "none"
+  }, 21800)
+
+
   setTimeout(function () {
     audio.play(); //запускаем музыку
     area.style.opacity = "1"; //показываем область
@@ -93,7 +109,7 @@ play.onclick = function () {
   setTimeout(function () {
     screenShadow.classList.add("screen-shadow-active")
     tap.style.opacity = "1"
-  }, 2500)
+  }, 22000)
 };
 tap.onclick = function () {
   tap.style.opacity = "0"
@@ -293,8 +309,8 @@ for (let i = 0; i < cards.length; i++) {
             e.target.style.display = "block"; //включаем фотографию через полсекунды
           }, 500);
         }
-        if(cardNum==272){
-         
+        if (cardNum == 272) {
+
           setTimeout(function () {
             tapAlbum.style.display = "flex"
           }, 500)
@@ -303,7 +319,7 @@ for (let i = 0; i < cards.length; i++) {
             tapAlbum.style.opacity = "1"
           }, 1000)
         };
-    
+
         tapAlbum.onclick = function () {
           tapAlbum.style.opacity = "0"
           setTimeout(function () {
