@@ -56,7 +56,7 @@ checkOrientation();
 window.addEventListener("orientationchange", checkOrientation);
 
 /*-----------------------------------------ПРЕЛОАДЕР ---------------------------------------*/
-var audio = new Audio("fon.mp3"); //создаеи объект фоновой музыки
+var audio = new Audio("fonA.mp3"); //создаеи объект фоновой музыки
 var pismo1voice = new Audio("pismo1.mp3")
 var pismo2voice = new Audio("pismo2.mp3")
 var pismo3voice = new Audio("pismo3.mp3")
