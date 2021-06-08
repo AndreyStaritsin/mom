@@ -212,6 +212,24 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
 for (let i = 0; i < cards.length; i++) {
   cards[i].children[0].addEventListener("click", function (e) {
     cardNum++
+        if(cardNum==1){
+      setTimeout(function () {
+        tapClose.style.display = "flex"
+      }, 500)
+      setTimeout(function () {
+        screenShadowTap.classList.add("screen-shadow-tap-active")
+        tapClose.style.opacity = "1"
+      }, 1000)
+   
+
+    tapClose.onclick = function () {
+      tapClose.style.opacity = "0"
+      setTimeout(function () {
+        screenShadowTap.classList.remove("screen-shadow-tap-active")
+        tapClose.style.display = "none"
+      }, 500)
+    }
+  }
     let photoAlbum = document.querySelectorAll(`.photo-album`); //получаем все фото(ячейки)альбома. При клике он перезаписывается
     let sheetRight = document.querySelector(`.sheet-${sheet}`).children[1]; // получаем правую страницу Текущего листа.
     if (e.target.localName == "img") {
