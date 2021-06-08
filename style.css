@@ -252,7 +252,7 @@ body {
 .pismo-1 {
     left: -3.52%;
     top: -7.6%;
-    z-index: 3;
+    z-index: 4;
     transform: rotate3d(-0.1, 1, 0, 180deg);
     background-image: url("pics/l7.jpg");
 }
