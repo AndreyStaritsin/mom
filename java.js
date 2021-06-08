@@ -90,7 +90,7 @@ play.onclick = function () {
   setTimeout(function () {
     screenShadow.classList.add("screen-shadow-active")
     tap.style.opacity = "1"
-  }, 2500)
+  }, 1500)
 };
 tap.onclick = function () {
   tap.style.opacity = "0"
