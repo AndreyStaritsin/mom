@@ -16,6 +16,7 @@ let alert = document.querySelector(".alert-box");
 let tap = document.querySelector(".tap")
 let tapCard = document.querySelector(".tap-card")
 let tapAlbum = document.querySelector(".tap-album")
+let tapClose = document.querySelector(".tap-close")
 let intro = document.querySelector(".intro")
 let introText = document.querySelectorAll(".intro-text p")
 
