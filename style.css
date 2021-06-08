@@ -661,6 +661,27 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.tap-album {
+    width: 40vw;
+    height: 70vh;
+    position: fixed;
+    z-index: 13;
+    color: white;
+    top: 0;
+    left: 15%;
+    font-family: "Coaster";
+    font-size: 6vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    cursor: pointer;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .tap-text {
     display: flex;
     justify-content: center;
@@ -693,7 +714,7 @@ body {
 .tap .tap-text:before {
     width: 70%;
     height: 30%;
-    background-image: url(/mom/pics/arrow.png);
+    background-image: url(/pics/arrow.png);
     background-size: 100% 100%;
     opacity: 1;
     position: absolute;
@@ -705,7 +726,7 @@ body {
 .tap-card .tap-text:before {
     width: 60%;
     height: 30%;
-    background-image: url(/mom/pics/arrow.png);
+    background-image: url(/pics/arrow.png);
     background-size: 100% 100%;
     opacity: 1;
     position: absolute;

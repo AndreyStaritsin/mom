@@ -15,6 +15,7 @@ let photoFullBox = document.querySelector(".photo-full-box");
 let alert = document.querySelector(".alert-box");
 let tap = document.querySelector(".tap")
 let tapCard = document.querySelector(".tap-card")
+let tapAlbum = document.querySelector(".tap-album")
 
 let sheet = 1; //счетчик листов альбома
 let sheetForSwipe = 1; //счетчик листов альбома при листании
@@ -23,6 +24,8 @@ let cardAlbum = 0; //счетчик ячеек (общее) альбома
 let cadr = 0; //счетчик заполненых ячеек листа альбома
 let numAddPhoto = "11"; // номер фото для дозагрузки после начальных 10
 let stagePismo = 0
+let cardNum=0
+
 
 /*-----------------------------------ПРЕДУПРЕЖДЕНИЕ ----------------------------------*/
 
@@ -90,7 +93,7 @@ play.onclick = function () {
   setTimeout(function () {
     screenShadow.classList.add("screen-shadow-active")
     tap.style.opacity = "1"
-  }, 1500)
+  }, 2500)
 };
 tap.onclick = function () {
   tap.style.opacity = "0"
@@ -192,6 +195,7 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
 
 for (let i = 0; i < cards.length; i++) {
   cards[i].children[0].addEventListener("click", function (e) {
+    cardNum++
     let photoAlbum = document.querySelectorAll(`.photo-album`); //получаем все фото(ячейки)альбома. При клике он перезаписывается
     let sheetRight = document.querySelector(`.sheet-${sheet}`).children[1]; // получаем правую страницу Текущего листа.
     if (e.target.localName == "img") {
@@ -288,6 +292,24 @@ for (let i = 0; i < cards.length; i++) {
             e.target.parentElement.style.display = "flex"; //включаем карточку
             e.target.style.display = "block"; //включаем фотографию через полсекунды
           }, 500);
+        }
+        if(cardNum==272){
+         
+          setTimeout(function () {
+            tapAlbum.style.display = "flex"
+          }, 500)
+          setTimeout(function () {
+            screenShadowTap.classList.add("screen-shadow-tap-active")
+            tapAlbum.style.opacity = "1"
+          }, 1000)
+        };
+    
+        tapAlbum.onclick = function () {
+          tapAlbum.style.opacity = "0"
+          setTimeout(function () {
+            screenShadowTap.classList.remove("screen-shadow-tap-active")
+            tapAlbum.style.display = "none"
+          }, 500)
         }
 
         /*----------------------------------- Увеличение (поднятие) индекса у карточек ----------------------------------*/
