@@ -108,7 +108,7 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
         audio.volume = 0.6
     //}, 250)
    // audio.volume = 0.15
-//  }
+ }
   };
 
   pisma[pismo].addEventListener("click", function () {
