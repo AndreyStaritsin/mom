@@ -101,13 +101,9 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
     if (audio.volume == 0.6) {
       audio.volume = 0.15;
     } else if (audio.volume == 0.15) {
-     // setTimeout(function () {
-    //    audio.volume = 0.25
-    //  }, 150)
-    //   setTimeout(function () {
+    
         audio.volume = 0.6
-    //}, 250)
-   // audio.volume = 0.15
+    
  }
   };
 
