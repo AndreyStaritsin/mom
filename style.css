@@ -697,6 +697,28 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+.tap-close{
+    width: 40vw;
+    height: 70vh;
+    position: fixed;
+    z-index: 13;
+    color: white;
+    top: 0;
+    left: 15%;
+    font-family: "Coaster";
+    font-size: 6vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    cursor: pointer;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
 .tap-text {
     display: flex;
     justify-content: center;
