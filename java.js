@@ -17,6 +17,7 @@ let tap = document.querySelector(".tap")
 let tapCard = document.querySelector(".tap-card")
 let tapAlbum = document.querySelector(".tap-album")
 let tapClose = document.querySelector(".tap-close")
+let tapPismo = document.querySelector(".tap-pismo")
 let intro = document.querySelector(".intro")
 let introText = document.querySelectorAll(".intro-text p")
 
@@ -28,7 +29,7 @@ let cadr = 0; //счетчик заполненых ячеек листа аль
 let numAddPhoto = "11"; // номер фото для дозагрузки после начальных 10
 let stagePismo = 0
 let cardNum = 0
-
+let pismoNum=0
 
 /*-----------------------------------ПРЕДУПРЕЖДЕНИЕ ----------------------------------*/
 
@@ -143,6 +144,24 @@ for (let pismo = 0; pismo < pisma.length; pismo++) { //вешаем слушат
 
   pisma[pismo].addEventListener("click", function () {
     stagePismo = stagePismo
+      pismoNum++
+    if(pismoNum==1){
+      setTimeout(function () {
+        tapPismo.style.display = "flex"
+      }, 500)
+      setTimeout(function () {
+        screenShadowPismo.classList.add("screen-shadow-tap-active")
+        tapPismo.style.opacity = "1"
+      }, 1000)
+   
+    tapPismo.onclick = function () {
+      tapPismo.style.opacity = "0"
+      setTimeout(function () {
+        screenShadowPismo.classList.remove("screen-shadow-tap-active")
+        tapPismo.style.display = "none"
+      }, 500)
+    }
+  }
     switch (true) {
       case pisma[pismo].classList.contains("pismo-1"):
         startVoice(pismo1voice)
